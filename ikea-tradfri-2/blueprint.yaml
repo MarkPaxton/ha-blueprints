@@ -1,5 +1,5 @@
 blueprint:
-  name: ZIKEA Tradfri 2 button remote for lights
+  name: IKEA TRADFRI 2 button remote for lights
   description:
     'Control lights with an IKEA tradfri 2 button remote (the square ones) the same way the do out of the box'
   domain: automation
@@ -48,7 +48,7 @@ blueprint:
           max: 2
           step: 0.1
           unit_of_measurement: seconds
-  source_url: https://community.home-assistant.io/t/zha-ikea-four-button-remote-styrbar-for-lights-e2001-e2002/384482
+  source_url: https://github.com/MarkPaxton/ha-blueprints/blob/main/ikea-tradfri-2/blueprint.yaml
 mode: restart
 max_exceeded: silent
 variables:
