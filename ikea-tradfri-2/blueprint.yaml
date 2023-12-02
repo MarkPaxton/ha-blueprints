@@ -48,34 +48,6 @@ blueprint:
           max: 2
           step: 0.1
           unit_of_measurement: seconds
-    button_left_short:
-      name: Left button - short press
-      description: Action to run on short left button press
-      default: []
-      selector:
-        action: null
-    button_left_long:
-      name: Left button - long press
-      description:
-        Action to run on long left button press. Use with care, as before
-        the long press event is sent, the "on" event gets triggered.
-      default: []
-      selector:
-        action: null
-    button_right_short:
-      name: Right button - short press
-      description: Action to run on short right button press
-      default: []
-      selector:
-        action: null
-    button_right_long:
-      name: Right button - long press
-      description:
-        Action to run on long right button press. Use with care, as before
-        the long press event is sent, the "on" event gets triggered.
-      default: []
-      selector:
-        action: null
   source_url: https://community.home-assistant.io/t/zha-ikea-four-button-remote-styrbar-for-lights-e2001-e2002/384482
 mode: restart
 max_exceeded: silent
@@ -148,27 +120,3 @@ action:
                     brightness_step_pct: -10
                     transition: !input "hold_time"
                 - delay: !input "hold_time"
-      - conditions:
-          - "{{ command == 'press' }}"
-          - "{{ cluster_id == 5 }}"
-          - "{{ endpoint_id == 1 }}"
-          - "{{ args == [257, 13, 0] }}"
-        sequence: !input "button_left_short"
-      - conditions:
-          - "{{ command == 'hold' }}"
-          - "{{ cluster_id == 5 }}"
-          - "{{ endpoint_id == 1 }}"
-          - "{{ args == [3329, 0] }}"
-        sequence: !input "button_left_long"
-      - conditions:
-          - "{{ command == 'press' }}"
-          - "{{ cluster_id == 5 }}"
-          - "{{ endpoint_id == 1 }}"
-          - "{{ args == [256, 13, 0] }}"
-        sequence: !input "button_right_short"
-      - conditions:
-          - "{{ command == 'hold' }}"
-          - "{{ cluster_id == 5 }}"
-          - "{{ endpoint_id == 1 }}"
-          - "{{ args == [3328, 0] }}"
-        sequence: !input "button_right_long"
