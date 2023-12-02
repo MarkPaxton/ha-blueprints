@@ -1,32 +1,7 @@
 blueprint:
-  name: ZHA - IKEA four button remote for lights
+  name: ZIKEA Tradfri 2 button remote for lights
   description:
-    'Control lights with an IKEA four button remote (the square ones),
-    for use with [ZHA](https://www.home-assistant.io/integrations/zha/).
-
-
-    Extends [SwerveShot](https://community.home-assistant.io/u/SwerveShot)''s [version](https://community.home-assistant.io/t/zha-ikea-four-button-remote-for-lights/347657)
-    which is based on the work of [frenck](https://community.home-assistant.io/u/frenck)
-    with the five button version.
-
-
-    Pressing the up button will turn on the lights at the last set brightness (unless
-    the force brightness is toggled on in the blueprint).
-
-
-    Pressing the down button will turn the lights off again.
-
-
-    Pressing and holding the up/down buttons will change the brightness smoothly and
-    can be pressed and hold until the brightness is satisfactory.
-
-
-    The "left" and "right" buttons can be assigned to a short and long button press
-    action. This allows you to assign, e.g., a scene or anything else. Use the left
-    and right button events with care, as before the long press event is sent, the
-    "on" event gets triggered.
-
-    '
+    'Control lights with an IKEA tradfri 2 button remote (the square ones) the same way the do out of the box'
   domain: automation
   input:
     remote:
@@ -36,7 +11,7 @@ blueprint:
         device:
           integration: zha
           manufacturer: IKEA of Sweden
-          model: Remote Control N2
+          model: TRADFRI on/off switch
     light:
       name: Light(s)
       description: The light(s) to control
